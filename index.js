@@ -8,7 +8,6 @@ const admin = require("firebase-admin");
 const serviceAccount = require("./firebase-admin-service-key.json");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
-console.log("🔑 JWT_SECRET is:", JWT_SECRET);
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
