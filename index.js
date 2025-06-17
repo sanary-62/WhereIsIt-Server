@@ -12,7 +12,10 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://whereisit-app-bdc3b.web.app"],
+  credentials: true  // allow cookies to be sent
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -33,7 +36,7 @@ const recoveredItemsCollection = client
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
 
     app.get("/items", verifyFirebaseToken, async (req, res) => {
       const userEmail = req.query.email;

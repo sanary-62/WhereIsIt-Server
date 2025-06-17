@@ -6,7 +6,7 @@ This is the backend server for the **WhereIsIt** platform — a secure and scala
 
 >  Currently running locally: `http://localhost:3000`
 
->  Live Deployment : 
+>  Live Deployment :https://whereisit-server-beta.vercel.app
 ---
 
 ##  Purpose
