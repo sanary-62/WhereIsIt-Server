@@ -3,6 +3,9 @@ const express = require('express')
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
+const admin = require("firebase-admin");
+const serviceAccount = require("./firebase-admin-service-key.json");
+
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 require('dotenv').config();
 
@@ -30,7 +33,7 @@ async function run() {
 
    
 
-    app.get('/items', async(req,res) => {
+    app.get('/items',verifyFirebaseToken, async(req,res) => {
       const cursor = itemsCollection.find();
       const result = await cursor.toArray();
       res.send(result);
@@ -61,6 +64,31 @@ async function run() {
     // await client.close(); 
   }
 }
+
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+
+
+const verifyFirebaseToken = async (req,res,next) => {
+ 
+    const authHeader = recoveredItemsCollection.headers?.authorization;
+
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).send ({message: 'unauthorized access'})
+    }
+
+    const token = authHeader.split(' ')[1];
+    console.log('token in the middleware', token)
+
+    next ();
+}
+
+
+
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
@@ -132,7 +160,7 @@ app.put('/items/:id', async (req, res) => {
       return res.status(400).send({ success: false, message: 'Invalid ID format' });
     }
 
-    // Optional: You may want to remove or ignore _id in updateData to prevent changing it
+    
     delete updateData._id;
 
     const query = { _id: new ObjectId(id) };
