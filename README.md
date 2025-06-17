@@ -6,8 +6,7 @@ This is the backend server for the **WhereIsIt** platform — a secure and scala
 
 >  Currently running locally: `http://localhost:3000`
 
->  Live Deployment (if available): _[Your Render/Glitch/Other deployment link here]_
-
+>  Live Deployment : 
 ---
 
 ##  Purpose
@@ -44,10 +43,3 @@ The purpose of this backend is to:
 | `jsonwebtoken`    | Sign and verify JWTs                         |
 | `mongodb`         | Interact with MongoDB database               |
 | `nodemon` (dev)   | Auto-restarts server during development      |
-
----
-
-##  Environment Variables (.env)
-
-Your `.env` file should contain:
-
