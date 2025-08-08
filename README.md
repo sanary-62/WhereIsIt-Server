@@ -2,7 +2,7 @@
 WhereIsIt is a full-stack Lost and Found web application built to help users report lost or found items and connect with others who may have recovered them. The app supports authentication, item posting, conditional item recovery, and role-based dashboard features. Users can report items, view details, manage posts, and track recovered items easily in a secure and responsive interface.
 
 🔗 Live Project Link
-🌐[ Visit the Live Site](https://whereisit-server-beta.vercel.app/)
+🌐[ Visit the Live Site](https://whereisit-app-bdc3b.web.app/)
 
 💻 Technologies Used
 Frontend: React.js, Tailwind CSS, React Router DOM, Axios, React Hook Form, React Datepicker, Framer Motion, SweetAlert2
