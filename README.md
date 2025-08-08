@@ -1,121 +1,75 @@
-📄 Description
-WhereIsIt is a full-stack Lost and Found web application built to help users report lost or found items and connect with others who may have recovered them. The app supports authentication, item posting, conditional item recovery, and role-based dashboard features. Users can report items, view details, manage posts, and track recovered items easily in a secure and responsive interface.
+# 🧳 WhereIsIt – Lost & Found Web App (Server)
 
-🔗 Live Project Link
-🌐[ Visit the Live Site](https://whereisit-app-bdc3b.web.app/)
+This is the backend API for **WhereIsIt**, a full-stack Lost & Found application. Built with Node.js, Express.js, and MongoDB, it manages secure authentication, item management, and recovery workflows.
 
-💻 Technologies Used
-Frontend: React.js, Tailwind CSS, React Router DOM, Axios, React Hook Form, React Datepicker, Framer Motion, SweetAlert2
+---
 
-Backend: Node.js, Express.js, MongoDB, Mongoose, JWT, dotenv, CORS
+## 🔗 Live Server URL
 
-Authentication: Firebase Auth (Email/Password & Google)
+🌐 [API Base URL](https://whereisit-server-beta.vercel.app/)
 
-UI Add-ons: Lottie, Dynamic Document Titles, Loading Spinners, Tooltips
+---
 
-📄 README File Content
-✅ Concise Project Overview
-A modern and user-friendly lost & found tracking system that lets users report missing or discovered items. Includes features like JWT auth, conditionally rendered buttons, dynamic layout changes, and secure data storage.
+## 🛠️ Technologies Used
 
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JSON Web Token (JWT)
+- dotenv
+- CORS
+- Morgan
+- Cookie-parser (optional)
 
-🧰 Main Technologies Used
-React.js
+---
 
-Firebase Auth
+## ✨ Key Features
 
-Express.js
+✅ JWT-based authentication and route protection  
+✅ RESTful APIs for Lost & Found item creation, update, delete  
+✅ User-specific endpoints for "My Items"  
+✅ Recovery status management and logging  
+✅ Secure handling of user roles and data access  
+✅ CORS-enabled for cross-origin requests  
+✅ Environment-based config for secure deployment
 
-MongoDB
+---
 
-JWT
+## 📦 Dependencies
 
-Tailwind CSS
+"bash"
+"express"
+"mongoose"
+"cors"
+"dotenv"
+"jsonwebtoken"
+"morgan"
+"cookie-parser"
+"nodemon" (for development)
 
-React Hook Form
-
-Axios
-
-React Datepicker
-
-Framer Motion
-
-SweetAlert2
-
-⚙️ Core Features
-🔐 Secure Firebase + JWT Authentication
-
-🔍 Search by title or location
-
-📝 Add & Update Lost/Found item posts
-
-📦 Store recovered item info in separate collection
-
-📂 Conditional button actions based on item type
-
-📅 Track lost/found and recovery dates
-
-📱 Responsive for mobile, tablet, desktop
-
-💡 Toggle layout (card ↔ table)
-
-📛 404 Page & Dynamic Page Titles
-
-🧹 Real-time form validation and visual feedback
-
-🧑‍💼 Logged-in users can manage only their own items
-
-📦 Dependencies
-bash
-Frontend:
-"react", "react-router-dom", "firebase", "react-hook-form", "axios", "react-toastify", "framer-motion", "react-datepicker", "lottie-react", "react-tooltip"
-
-Backend:
-"express", "cors", "dotenv", "mongoose", "jsonwebtoken", "morgan"
-🚀 How to Run the Project Locally
-Client Setup:
-Clone the client repo:
-
-bash
-git clone https://github.com/your-username/WhereIsIt-Client.git
-cd WhereIsIt-Client
-Install dependencies:
-
-bash
-npm install
-Create a .env file:
-
-env
-VITE_FIREBASE_API_KEY=your_key
-VITE_AUTH_DOMAIN=your_auth_domain
-VITE_SERVER_URL=http://localhost:5000
-Run the project:
-
-bash
-npm run dev
-Server Setup:
-Clone the server repo:
+⚙️ How to Run Locally
+Clone the repo:
 
 bash
 git clone https://github.com/your-username/WhereIsIt-Server.git
-cd WhereIsIt-Server
 Install dependencies:
 
 bash
 npm install
-Create a .env file:
+Create a .env file in the root folder:
 
 env
 PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_jwt_secret_key
 Start the server:
 
 bash
-npm run start
-
-
+npm start
+The server will run at http://localhost:5000 by default.
 
 📚 Related Links
+🔗 [Live Client Site](https://whereisit-app-bdc3b.web.app/)
 
-[Client GitHub Repo](https://github.com/sanary-62/WhereIsIt-Client)
- [Live Client Site](https://whereisit-app-bdc3b.web.app/)
+📁 [Client GitHub Repo](https://github.com/sanary-62/WhereIsIt-Client)
+
