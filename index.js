@@ -14,7 +14,7 @@ require("dotenv").config();
 
 app.use(cors({
   origin: ["https://whereisit-app-bdc3b.web.app"],
-  credentials: true  // allow cookies to be sent
+  credentials: true  
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -38,7 +38,7 @@ async function run() {
   try {
     // await client.connect();
 
-    app.get("/items", verifyFirebaseToken, async (req, res) => {
+    app.get("/items", async (req, res) => {
       const userEmail = req.query.email;
 
       let query = {};
@@ -52,6 +52,20 @@ async function run() {
       const result = await itemsCollection.find(query).toArray();
       res.send(result);
     });
+
+
+    app.get("/myItems", verifyFirebaseToken, async (req, res) => {
+  try {
+    const userEmail = req.decoded.email;
+    const query = { userEmail };
+    const result = await itemsCollection.find(query).toArray();
+    res.send(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Failed to fetch user items" });
+  }
+});
+
 
     app.post("/jwt", (req, res) => {
       const { email } = req.body;
